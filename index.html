@@ -38,7 +38,28 @@
     </div>
   </main>
 
-  <nav class="dock" id="dock" aria-label="Быстрая навигация"></nav>
+  <nav class="dock" id="dock" aria-label="Быстрая навигация">
+    <button type="button" class="dock-btn" data-cmd="about">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path></svg>
+      <span class="label">about</span>
+    </button>
+    <button type="button" class="dock-btn" data-cmd="projects">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+      <span class="label">projects</span>
+    </button>
+    <button type="button" class="dock-btn" data-cmd="stack">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="m2 12 10 5 10-5"></path><path d="m2 17 10 5 10-5"></path></svg>
+      <span class="label">stack</span>
+    </button>
+    <button type="button" class="dock-btn" data-cmd="experience">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path></svg>
+      <span class="label">experience</span>
+    </button>
+    <button type="button" class="dock-btn" data-cmd="contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
+      <span class="label">contact</span>
+    </button>
+  </nav>
 
   <script src="js/projects.js"></script>
   <script src="js/typewriter.js"></script>

@@ -109,6 +109,13 @@ const Terminal = {
       const clickable = e.target.closest("[data-cmd]");
       if (clickable && clickable.dataset.cmd) this.execute(clickable.dataset.cmd);
     });
+    const dock = document.getElementById("dock");
+    if (dock) {
+      dock.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-cmd]");
+        if (btn && btn.dataset.cmd) this.execute(btn.dataset.cmd);
+      });
+    }
   },
 
   async boot() {
@@ -232,11 +239,23 @@ const Terminal = {
     const parsed = this.parseCommand(trimmed);
     const entry = Commands.resolve(parsed.name);
     if (entry) {
+      this.setActive(entry.name);
       entry.run(parsed.args);
     } else {
       this.print("command not found: " + parsed.name, "error");
     }
     this.input.focus();
+  },
+
+  setActive(name) {
+    const dock = document.getElementById("dock");
+    if (!dock || !dock.children) return;
+    const children = Array.from(dock.children);
+    if (!children.some((b) => b.dataset && b.dataset.cmd === name)) return;
+    for (const btn of children) {
+      if (!btn.dataset || !btn.dataset.cmd) continue;
+      btn.className = btn.dataset.cmd === name ? "dock-btn active" : "dock-btn";
+    }
   },
 
   autocomplete() {
