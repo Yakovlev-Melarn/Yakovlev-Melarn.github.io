@@ -116,6 +116,21 @@ const Terminal = {
         if (btn && btn.dataset.cmd) this.execute(btn.dataset.cmd);
       });
     }
+    this.setupViewport();
+  },
+
+  setupViewport() {
+    if (!window.visualViewport) return;
+    const onResize = () => {
+      const offset = Math.max(0, window.innerHeight - window.visualViewport.height);
+      const root = document.documentElement;
+      if (root && root.style) {
+        root.style.setProperty("--app-height", window.visualViewport.height + "px");
+        root.style.setProperty("--keyboard-offset", offset + "px");
+      }
+    };
+    window.visualViewport.addEventListener("resize", onResize);
+    onResize();
   },
 
   async boot() {

@@ -22,6 +22,8 @@
   --font-size: 15px;
   --line-height: 1.6;
   --dock-reserve: 96px;
+  --app-height: 100vh;
+  --keyboard-offset: 0px;
 }
 
 *,
@@ -42,6 +44,7 @@ body {
   font-family: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
   font-size: var(--font-size);
   line-height: var(--line-height);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -72,7 +75,7 @@ body {
 
 .terminal {
   max-width: var(--max-width);
-  height: 100vh;
+  height: var(--app-height);
   margin: 0 auto;
   padding: 24px 24px var(--dock-reserve);
   display: flex;
@@ -80,8 +83,8 @@ body {
 }
 
 @supports (height: 100dvh) {
-  .terminal {
-    height: 100dvh;
+  :root {
+    --app-height: 100dvh;
   }
 }
 
@@ -127,7 +130,7 @@ body {
 
 .line {
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .section-title {
@@ -250,6 +253,7 @@ a:hover,
   border-bottom: 1px solid var(--border-default);
   color: var(--text-secondary);
   font-size: 13px;
+  overflow-wrap: break-word;
 }
 
 .card-body {
@@ -400,7 +404,7 @@ a:hover,
 
 .dock {
   position: fixed;
-  bottom: 16px;
+  bottom: calc(16px + var(--keyboard-offset, 0px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -498,13 +502,14 @@ a:hover,
   }
 
   .dock {
-    bottom: 8px;
+    bottom: calc(8px + var(--keyboard-offset, 0px) + env(safe-area-inset-bottom, 0px));
     padding: 6px;
     gap: 2px;
   }
 
   .dock-btn {
     min-width: 44px;
+    min-height: 44px;
     padding: 8px;
   }
 
