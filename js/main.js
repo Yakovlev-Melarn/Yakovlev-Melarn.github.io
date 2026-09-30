@@ -15,7 +15,7 @@ function openTerminal() {
   if (!booted) {
     booted = true;
     Terminal.init();
-    Terminal.boot();
+    Terminal.boot().catch((error) => console.error(error));
   } else {
     Terminal.focus();
   }
@@ -32,7 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderLanding();
   wireLanding(openTerminal, showLanding);
 });
-
-window.portfolio = { openTerminal, showLanding };
 
 export { openTerminal, showLanding };

@@ -16,12 +16,15 @@ function buildCss() {
 }
 
 function buildHtml() {
+  const cssHref = ["css", "style.css"].join("/");
+  const moduleSrc = ["js", "main.js"].join("/");
+  const bundleSrc = ["js", "bundle.js"].join("/");
   let html = fs.readFileSync(path.join(root, "index.html"), "utf8");
   html = html.replace(/\n[ \t]*<link rel="stylesheet" href="css\/[^"]+">/g, "");
-  html = html.replace("</head>", '  <link rel="stylesheet" href="css/style.css">\n</head>');
+  html = html.replace("</head>", '  <link rel="stylesheet" href="' + cssHref + '">\n</head>');
   html = html.replace(
-    '<script type="module" src="js/main.js"></script>',
-    '<script src="js/bundle.js"></script>'
+    '<script type="module" src="' + moduleSrc + '"></script>',
+    '<script src="' + bundleSrc + '"></script>'
   );
   fs.writeFileSync(path.join(dist, "index.html"), html);
 }
@@ -38,7 +41,11 @@ function copyAssets() {
   }
 }
 
-webpack(config, (err, stats) => {
+/**
+ * @param {Error | null} err
+ * @param {{ hasErrors: () => boolean; toString: (options?: object) => string }} stats
+ */
+function onBuilt(err, stats) {
   if (err) {
     console.error(err);
     process.exit(1);
@@ -52,4 +59,6 @@ webpack(config, (err, stats) => {
   copyAssets();
   console.log(stats.toString({ colors: false, modules: false }));
   console.log("Готово: dist/");
-});
+}
+
+webpack(config, onBuilt);

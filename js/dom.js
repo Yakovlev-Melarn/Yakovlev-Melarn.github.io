@@ -3,6 +3,12 @@ function hAppend(node, child) {
   node.appendChild(typeof child === "string" ? document.createTextNode(child) : child);
 }
 
+/**
+ * @param {string} tag
+ * @param {Record<string, string> | null} [attrs]
+ * @param {...(string | object | Array<string | object>)} children
+ * @returns {object}
+ */
 function h(tag, attrs, ...children) {
   const node = document.createElement(tag);
   for (const [key, value] of Object.entries(attrs || {})) {
