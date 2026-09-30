@@ -72,8 +72,8 @@ npm run build
 
 ## Перед публикацией
 
-- **Лендинг (HR-вид):** отредактируйте «человеческий» текст под себя: `Profile.about`, `Profile.softSkills`, `PlainSkills`, `summary`/`plainBullets` у каждой позиции в `Experience` и `plain`/`result` у проектов в `js/projects.js` — весь текст живёт в данных, а не в разметке
-- Замените 6 плейсхолдеров в `js/projects.js` на реальные проекты (включая ссылки в `links`)
+- **Лендинг (HR-вид):** отредактируйте «человеческий» текст под себя: `Profile.about`, `Profile.softSkills`, `PlainSkills`, `summary`/`plainBullets` у каждой позиции в `Experience` — весь текст живёт в данных, а не в разметке
+- Укажите реальные ссылки на репозитории проектов в `js/projects.js` (`links.github` — сейчас плейсхолдеры)
 - При смене имени/стека пересоберите `assets/og-image.png`
 
 ## Деплой
