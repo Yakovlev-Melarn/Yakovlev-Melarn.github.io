@@ -1,70 +1,124 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Алексей Яковлев — Backend Developer</title>
-  <meta name="description" content="Портфолио бэкенд-разработчика. PHP, Laravel, Go, PostgreSQL. REST API, микросервисы, CI/CD.">
-  <meta name="keywords" content="backend developer, PHP, Laravel, Go, API, portfolio">
-  <meta name="author" content="Алексей Яковлев">
-  <meta property="og:title" content="Алексей Яковлев — Backend Developer">
-  <meta property="og:description" content="Портфолио бэкенд-разработчика">
-  <meta property="og:image" content="assets/og-image.png">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[Имя Фамилия] — Backend Developer</title>
+    <meta name="description" content="Портфолио бэкенд-разработчика. PHP, Laravel, Go, PostgreSQL. REST API, микросервисы, CI/CD.">
+    <meta name="keywords" content="backend developer, PHP, Laravel, Go, API, portfolio">
+    <meta name="author" content="[Имя Фамилия]">
+    <meta property="og:title" content="[Имя Фамилия] — Backend Developer">
+    <meta property="og:description" content="Портфолио бэкенд-разработчика">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/terminal.css">
-  <link rel="stylesheet" href="css/cards.css">
-  <link rel="stylesheet" href="css/dock.css">
-  <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
-  <main class="terminal" id="terminal" aria-label="Терминал">
-    <div class="terminal-output" id="terminal-output" role="log" aria-live="polite"></div>
-    <div class="terminal-line">
-      <span class="prompt" id="terminal-prompt">$</span>
-      <input
-        type="text"
-        id="terminal-input"
-        class="terminal-input"
-        autocomplete="off"
-        autocapitalize="none"
-        spellcheck="false"
-        aria-label="Введите команду"
-      >
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <div id="view-landing" class="landing">
+      <header class="land-hero">
+        <img src="assets/avatar.svg" alt="Фото [Имя Фамилия]" class="land-avatar">
+        <div class="land-hero-text">
+          <h1 id="land-name"></h1>
+          <p class="land-role" id="land-role"></p>
+          <p class="land-tagline" id="land-tagline"></p>
+          <p class="land-meta" id="land-meta"></p>
+        </div>
+        <button type="button" class="terminal-btn" id="open-terminal-hero">
+          <span aria-hidden="true">$</span> Открыть в терминале
+        </button>
+      </header>
+
+      <main class="land-main">
+        <section class="land-section">
+          <h2 class="land-title">Обо мне</h2>
+          <div id="land-about"></div>
+          <ul class="land-soft" id="land-soft"></ul>
+        </section>
+
+        <section class="land-section">
+          <h2 class="land-title">Опыт работы</h2>
+          <div id="land-jobs"></div>
+        </section>
+
+        <section class="land-section">
+          <h2 class="land-title">Навыки</h2>
+          <div id="land-skills"></div>
+        </section>
+
+        <section class="land-section">
+          <h2 class="land-title">Проекты</h2>
+          <div id="land-projects"></div>
+        </section>
+
+        <section class="land-section">
+          <h2 class="land-title">Контакты</h2>
+          <div id="land-contacts"></div>
+        </section>
+      </main>
+
+      <footer class="land-footer">
+        <button type="button" class="terminal-btn" id="open-terminal-footer">
+          <span aria-hidden="true">$</span> Открыть в терминале
+        </button>
+        <p class="land-footer-note">
+          Терминальная версия — для тех, кто любит глубже: стек, детали проектов и пасхалки.
+        </p>
+      </footer>
     </div>
-  </main>
 
-  <nav class="dock" id="dock" aria-label="Быстрая навигация">
-    <button type="button" class="dock-btn" data-cmd="about">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path></svg>
-      <span class="label">about</span>
-    </button>
-    <button type="button" class="dock-btn" data-cmd="projects">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-      <span class="label">projects</span>
-    </button>
-    <button type="button" class="dock-btn" data-cmd="stack">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="m2 12 10 5 10-5"></path><path d="m2 17 10 5 10-5"></path></svg>
-      <span class="label">stack</span>
-    </button>
-    <button type="button" class="dock-btn" data-cmd="experience">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path></svg>
-      <span class="label">experience</span>
-    </button>
-    <button type="button" class="dock-btn" data-cmd="contact">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
-      <span class="label">contact</span>
-    </button>
-  </nav>
+    <main class="terminal" id="terminal" aria-label="Терминал" hidden>
+      <button type="button" class="back-btn" id="terminal-back">← к лендингу</button>
+      <div class="terminal-output" id="terminal-output" role="log" aria-live="polite"></div>
+      <div class="terminal-line">
+        <span class="prompt" id="terminal-prompt">$</span>
+        <input
+          type="text"
+          id="terminal-input"
+          class="terminal-input"
+          autocomplete="off"
+          autocapitalize="none"
+          spellcheck="false"
+          aria-label="Введите команду"
+        >
+      </div>
+    </main>
 
-  <script type="module" src="js/main.js"></script>
-</body>
+    <nav class="dock" id="dock" aria-label="Быстрая навигация" hidden>
+      <button type="button" class="dock-btn" data-cmd="about">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path></svg>
+        <span class="label">about</span>
+      </button>
+      <button type="button" class="dock-btn" data-cmd="projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span class="label">projects</span>
+      </button>
+      <button type="button" class="dock-btn" data-cmd="stack">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="m2 12 10 5 10-5"></path><path d="m2 17 10 5 10-5"></path></svg>
+        <span class="label">stack</span>
+      </button>
+      <button type="button" class="dock-btn" data-cmd="experience">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path></svg>
+        <span class="label">experience</span>
+      </button>
+      <button type="button" class="dock-btn" data-cmd="contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
+        <span class="label">contact</span>
+      </button>
+    </nav>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

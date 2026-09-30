@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
 
 function buildCss() {
-  const order = ["base.css", "terminal.css", "cards.css", "dock.css", "responsive.css"];
+  const order = ["base.css", "terminal.css", "cards.css", "dock.css", "landing.css", "responsive.css"];
   const css = order
     .map((file) => fs.readFileSync(path.join(root, "css", file), "utf8"))
     .join("\n");

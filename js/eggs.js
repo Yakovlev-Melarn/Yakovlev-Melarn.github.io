@@ -14,7 +14,7 @@ export function registerEggs() {
     }
   }, [], "удалить всё", true);
 
-  Commands.register(" ", function () {
+  Commands.register("coffee", function () {
     Terminal.print(
       "      ( (\n" +
       "      ) )\n" +

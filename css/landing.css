@@ -1,0 +1,295 @@
+.landing {
+  --land-bg: #f6f8fa;
+  --land-bg-card: #ffffff;
+  --land-text: #24292f;
+  --land-text-dim: #57606a;
+  --land-border: #d0d7de;
+  --land-accent: #1a7f37;
+  --land-accent-soft: #dafbe1;
+  --land-chip: #eaeef2;
+
+  min-height: 100vh;
+  background-color: var(--land-bg);
+  color: var(--land-text);
+  font-family: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+.landing a {
+  color: var(--land-accent);
+}
+
+.land-hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 880px;
+  margin: 40px auto 8px;
+  padding: 0 24px;
+}
+
+.land-avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 16px;
+  border: 1px solid var(--land-border);
+  flex-shrink: 0;
+}
+
+.land-hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.land-hero-text h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.land-role {
+  color: var(--land-accent);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.land-tagline {
+  font-size: 14px;
+  color: var(--land-text);
+  margin-bottom: 8px;
+}
+
+.land-meta {
+  font-size: 13px;
+  color: var(--land-text-dim);
+}
+
+.terminal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1f2328;
+  color: #7ee787;
+  border: 1px solid #1f2328;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.terminal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(31, 35, 40, 0.3);
+}
+
+.terminal-btn:focus-visible {
+  outline: 2px solid var(--land-accent);
+  outline-offset: 2px;
+}
+
+.land-main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+}
+
+.land-section {
+  margin-top: 32px;
+}
+
+.land-title {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.land-title::before {
+  content: "## ";
+  color: var(--land-accent);
+}
+
+#land-about p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.land-soft {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.land-soft li {
+  background-color: var(--land-accent-soft);
+  color: var(--land-accent);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 13px;
+}
+
+.land-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.land-card {
+  background-color: var(--land-bg-card);
+  border: 1px solid var(--land-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.land-card:hover {
+  box-shadow: 0 4px 14px rgba(31, 35, 40, 0.08);
+}
+
+.land-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.land-card h3 {
+  font-size: 16px;
+}
+
+.land-period {
+  font-size: 13px;
+  color: var(--land-text-dim);
+}
+
+.land-role-card {
+  font-size: 14px;
+  color: var(--land-text-dim);
+  margin: 4px 0 10px;
+}
+
+.land-summary {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.land-bullets {
+  list-style: none;
+}
+
+.land-bullets li {
+  position: relative;
+  padding-left: 1.6em;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.land-bullets li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--land-accent);
+}
+
+.land-what {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.land-result {
+  font-size: 14px;
+  color: var(--land-accent);
+  background-color: var(--land-accent-soft);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.land-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.land-skill-name {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--land-text-dim);
+  margin-bottom: 8px;
+}
+
+.land-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.land-tag {
+  background-color: var(--land-chip);
+  border: 1px solid var(--land-border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+.land-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.land-contacts a {
+  display: inline-block;
+  background-color: var(--land-bg-card);
+  border: 1px solid var(--land-border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.land-contacts a:hover {
+  border-color: var(--land-accent);
+}
+
+.land-footer {
+  max-width: 880px;
+  margin: 56px auto 0;
+  padding: 24px 24px 72px;
+  text-align: center;
+}
+
+.land-footer-note {
+  font-size: 13px;
+  color: var(--land-text-dim);
+  margin-top: 12px;
+}
+
+.back-btn {
+  align-self: flex-start;
+  margin-bottom: 12px;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-green);
+}
+
+.back-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
