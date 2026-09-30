@@ -69,11 +69,6 @@ function fillStatic() {
     badge.style.display = "none";
   }
 
-  const writeBtn = document.getElementById("land-write");
-  const email =
-    Profile.contacts.find((c) => c.url.indexOf("mailto:") === 0) || Profile.contacts[0];
-  if (email && writeBtn) writeBtn.href = email.url;
-
   const about = document.getElementById("land-about");
   Profile.about.forEach((p) => about.appendChild(h("p", null, p)));
   const soft = document.getElementById("land-soft");
@@ -107,6 +102,13 @@ function initReveal() {
   items.forEach((item) => io.observe(item));
 }
 
+function scrollToContacts() {
+  const target = document.getElementById("land-contacts-block");
+  if (!target || typeof target.scrollIntoView !== "function") return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+}
+
 export function renderLanding() {
   fillStatic();
   document.getElementById("land-jobs").appendChild(
@@ -127,4 +129,6 @@ export function wireLanding(onOpenTerminal, onShowLanding) {
   }
   const back = document.getElementById("terminal-back");
   if (back) back.addEventListener("click", onShowLanding);
+  const write = document.getElementById("land-write");
+  if (write) write.addEventListener("click", scrollToContacts);
 }

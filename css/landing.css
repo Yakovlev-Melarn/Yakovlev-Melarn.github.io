@@ -8,6 +8,9 @@
   --land-accent: #b0653f;
   --land-accent-deep: #96522f;
   --land-accent-soft: #f5eae2;
+  --land-accent-btn: #8a4a2b;
+  --land-accent-btn-hover: #743c20;
+  --land-status: #43a574;
   --land-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --land-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   --land-radius: 18px;
@@ -79,7 +82,7 @@ html:has(#view-landing:not([hidden])) {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--land-accent);
+  background-color: var(--land-status);
   animation: land-pulse 2.4s ease-in-out infinite;
 }
 
@@ -97,9 +100,9 @@ html:has(#view-landing:not([hidden])) {
 
 .land-avatar {
   display: block;
-  width: 104px;
-  height: 104px;
-  margin: 30px auto 0;
+  width: 128px;
+  height: 128px;
+  margin: 32px auto 0;
   border-radius: 50%;
   border: 4px solid var(--land-card);
   box-shadow: var(--land-shadow);
@@ -168,15 +171,15 @@ html:has(#view-landing:not([hidden])) {
 }
 
 .btn-primary {
-  background-color: var(--land-accent);
-  color: #fff8f2;
-  box-shadow: 0 8px 22px rgba(176, 101, 63, 0.3);
+  background-color: var(--land-accent-btn);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(138, 74, 43, 0.32);
 }
 
 .btn-primary:hover {
-  background-color: var(--land-accent-deep);
+  background-color: var(--land-accent-btn-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(176, 101, 63, 0.38);
+  box-shadow: 0 12px 28px rgba(138, 74, 43, 0.4);
 }
 
 .btn-dark {
