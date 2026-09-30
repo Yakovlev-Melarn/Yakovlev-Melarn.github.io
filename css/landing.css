@@ -100,8 +100,8 @@ html:has(#view-landing:not([hidden])) {
 
 .land-avatar {
   display: block;
-  width: 128px;
-  height: 128px;
+  width: clamp(120px, 16vw, 176px);
+  height: clamp(120px, 16vw, 176px);
   margin: 32px auto 0;
   border-radius: 50%;
   border: 4px solid var(--land-card);
