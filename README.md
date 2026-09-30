@@ -33,7 +33,7 @@ portfolio/
 ├── scripts/build.js        — сборка dist/
 ├── webpack.config.js       — бандл + обфускация
 └── assets/
-    ├── avatar.svg          — плейсхолдер-аватар (заменить на фото)
+    ├── photo.webp          — аватар (иллюстрация, круглый кроп 128px)
     ├── favicon.svg
     └── og-image.png
 ```
@@ -74,7 +74,6 @@ npm run build
 
 - **Лендинг (HR-вид):** отредактируйте «человеческий» текст под себя: `Profile.about`, `Profile.softSkills`, `PlainSkills`, `summary`/`plainBullets` у каждой позиции в `Experience` и `plain`/`result` у проектов в `js/projects.js` — весь текст живёт в данных, а не в разметке
 - Замените 6 плейсхолдеров в `js/projects.js` на реальные проекты (включая ссылки в `links`)
-- Замените плейсхолдер-аватар `assets/avatar.svg` на реальное фото (SVG или PNG, ~240×240)
 - При смене имени/стека пересоберите `assets/og-image.png`
 
 ## Деплой
