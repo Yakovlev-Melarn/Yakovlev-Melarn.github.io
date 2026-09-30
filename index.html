@@ -17,7 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/terminal.css">
@@ -29,49 +29,52 @@
   <body>
     <div id="view-landing" class="landing">
       <header class="land-hero">
+        <span class="land-badge"><span class="land-badge-dot"></span><span id="land-badge-text"></span></span>
         <img src="assets/avatar.svg" alt="Фото [Имя Фамилия]" class="land-avatar">
-        <div class="land-hero-text">
-          <h1 id="land-name"></h1>
-          <p class="land-role" id="land-role"></p>
-          <p class="land-tagline" id="land-tagline"></p>
-          <p class="land-meta" id="land-meta"></p>
+        <h1 class="land-name" id="land-name"></h1>
+        <p class="land-role" id="land-role"></p>
+        <p class="land-tagline" id="land-tagline"></p>
+        <p class="land-meta" id="land-meta"></p>
+        <div class="land-cta">
+          <a class="btn btn-primary" id="land-write" href="#">Написать мне</a>
+          <button type="button" class="btn btn-dark" id="open-terminal-hero">
+            <span class="term-glyph" aria-hidden="true">›_</span> Открыть в терминале
+          </button>
         </div>
-        <button type="button" class="terminal-btn" id="open-terminal-hero">
-          <span aria-hidden="true">$</span> Открыть в терминале
-        </button>
       </header>
 
       <main class="land-main">
-        <section class="land-section">
+        <section class="land-section" data-reveal>
           <h2 class="land-title">Обо мне</h2>
           <div id="land-about"></div>
           <ul class="land-soft" id="land-soft"></ul>
         </section>
 
-        <section class="land-section">
+        <section class="land-section" data-reveal>
           <h2 class="land-title">Опыт работы</h2>
           <div id="land-jobs"></div>
         </section>
 
-        <section class="land-section">
+        <section class="land-section" data-reveal>
           <h2 class="land-title">Навыки</h2>
           <div id="land-skills"></div>
         </section>
 
-        <section class="land-section">
+        <section class="land-section" data-reveal>
           <h2 class="land-title">Проекты</h2>
           <div id="land-projects"></div>
         </section>
 
-        <section class="land-section">
+        <section class="land-section" data-reveal>
           <h2 class="land-title">Контакты</h2>
+          <p class="land-lead">Свяжитесь любым удобным способом — обычно отвечаю в течение дня.</p>
           <div id="land-contacts"></div>
         </section>
       </main>
 
-      <footer class="land-footer">
-        <button type="button" class="terminal-btn" id="open-terminal-footer">
-          <span aria-hidden="true">$</span> Открыть в терминале
+      <footer class="land-footer" data-reveal>
+        <button type="button" class="btn btn-dark" id="open-terminal-footer">
+          <span class="term-glyph" aria-hidden="true">›_</span> Открыть в терминале
         </button>
         <p class="land-footer-note">
           Терминальная версия — для тех, кто любит глубже: стек, детали проектов и пасхалки.

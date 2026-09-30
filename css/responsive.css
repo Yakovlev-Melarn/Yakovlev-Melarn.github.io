@@ -50,6 +50,37 @@
   .dock-btn .label {
     display: none;
   }
+
+  .land-hero {
+    padding: 64px 20px 44px;
+  }
+
+  .land-tagline {
+    font-size: 17px;
+  }
+
+  .btn {
+    padding: 13px 24px;
+    font-size: 14.5px;
+  }
+
+  .land-section {
+    margin-top: 64px;
+  }
+
+  #land-jobs .land-card {
+    padding: 22px 20px 22px 48px;
+  }
+
+  #land-jobs .land-card::before {
+    left: 16px;
+    top: 26px;
+  }
+
+  #land-jobs .land-card::after {
+    left: 21px;
+    top: 44px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -63,5 +94,13 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .land-hero > * {
+    animation-delay: 0ms !important;
+  }
+
+  .land-badge-dot {
+    animation: none !important;
   }
 }

@@ -12,7 +12,7 @@ function jobCard(job) {
       h("h3", null, job.company),
       h("span", { class: "land-period" }, job.period)
     ),
-    h("p", { class: "land-role" }, job.role),
+    h("p", { class: "land-role-card" }, job.role),
     h("p", { class: "land-summary" }, job.summary),
     h("ul", { class: "land-bullets" }, job.plainBullets.map((b) => h("li", null, b)))
   );
@@ -59,15 +59,52 @@ function fillStatic() {
   document.getElementById("land-name").textContent = Profile.name;
   document.getElementById("land-role").textContent = Profile.role;
   document.getElementById("land-tagline").textContent = Profile.tagline;
-  const meta = [Profile.location, Profile.years + " лет опыта"];
-  if (Profile.openToOffers) meta.push("открыт к предложениям");
-  document.getElementById("land-meta").textContent = meta.join("  •  ");
+  document.getElementById("land-meta").textContent =
+    [Profile.location, Profile.years + " лет опыта"].join("  •  ");
+
+  const badge = document.getElementById("land-badge");
+  if (Profile.openToOffers) {
+    document.getElementById("land-badge-text").textContent = "Открыт к предложениям";
+  } else if (badge && badge.style) {
+    badge.style.display = "none";
+  }
+
+  const writeBtn = document.getElementById("land-write");
+  const email =
+    Profile.contacts.find((c) => c.url.indexOf("mailto:") === 0) || Profile.contacts[0];
+  if (email && writeBtn) writeBtn.href = email.url;
 
   const about = document.getElementById("land-about");
   Profile.about.forEach((p) => about.appendChild(h("p", null, p)));
-
   const soft = document.getElementById("land-soft");
   Profile.softSkills.forEach((s) => soft.appendChild(h("li", null, s)));
+}
+
+function initReveal() {
+  const root = document.getElementById("view-landing");
+  if (
+    !root ||
+    !root.classList ||
+    typeof root.querySelectorAll !== "function" ||
+    typeof IntersectionObserver === "undefined"
+  ) {
+    return;
+  }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  root.classList.add("js-reveal");
+  const items = root.querySelectorAll("[data-reveal]");
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+  items.forEach((item) => io.observe(item));
 }
 
 export function renderLanding() {
@@ -80,6 +117,7 @@ export function renderLanding() {
     h("div", { class: "land-cards" }, projects.map(landProjectCard))
   );
   document.getElementById("land-contacts").appendChild(contactsRow());
+  initReveal();
 }
 
 export function wireLanding(onOpenTerminal, onShowLanding) {
