@@ -1,0 +1,102 @@
+.terminal {
+  max-width: var(--max-width);
+  height: var(--app-height);
+  margin: 0 auto;
+  padding: 24px 24px var(--dock-reserve);
+  display: flex;
+  flex-direction: column;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}
+
+.terminal-output {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-tertiary) transparent;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-muted);
+}
+
+.prompt {
+  color: var(--accent-green);
+  font-weight: 700;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.terminal-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font: inherit;
+  caret-color: var(--accent-green);
+}
+
+.terminal-input:disabled {
+  opacity: 0.4;
+}
+
+.terminal-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.line {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.section-title {
+  font-weight: 700;
+  margin: 16px 0 8px;
+}
+
+a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--text-secondary);
+}
+
+.error {
+  color: var(--accent-red);
+}
+
+.success {
+  color: var(--accent-green);
+}
+
+.cmd-hint {
+  color: var(--accent-green);
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.cmd-hint:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}

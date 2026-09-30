@@ -1,3 +1,5 @@
+import { Terminal } from "./terminal.js";
+
 const Typewriter = (() => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const START_DELAY = 500;
@@ -59,7 +61,8 @@ const Typewriter = (() => {
   }
 
   async function type(container, lines, options) {
-    const { speed, onDone } = options || {};
+    const opts = typeof options === "function" ? { onDone: options } : options || {};
+    const { speed, onDone } = opts;
 
     if (reducedMotion.matches) {
       renderInstant(container, lines);
@@ -78,3 +81,5 @@ const Typewriter = (() => {
 
   return { type };
 })();
+
+export { Typewriter };

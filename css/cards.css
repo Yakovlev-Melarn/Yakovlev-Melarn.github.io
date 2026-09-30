@@ -1,0 +1,174 @@
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  margin: 12px 0;
+  overflow: hidden;
+  animation: card-in 200ms ease;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 13px;
+  overflow-wrap: break-word;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-meta {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.project-list {
+  margin: 12px 0;
+}
+
+.project-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.project-row:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+}
+
+.project-row:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.project-row .perms {
+  color: var(--text-tertiary);
+}
+
+.project-row .name {
+  color: var(--accent-cyan);
+}
+
+.project-row .desc {
+  color: var(--text-secondary);
+}
+
+.bullets {
+  list-style: none;
+  margin: 8px 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.bullets li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+}
+
+.stack-yaml {
+  margin: 12px 0;
+}
+
+.yaml-key {
+  color: var(--accent-purple);
+}
+
+.yaml-item {
+  padding-left: 1.6em;
+}
+
+.yaml-item::before {
+  content: "- ";
+  color: var(--text-secondary);
+}
+
+.help-list {
+  margin: 12px 0;
+}
+
+.help-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px 16px;
+  flex-wrap: wrap;
+  padding: 2px 0;
+}
+
+.help-cmd {
+  color: var(--accent-green);
+  min-width: 11em;
+}
+
+.help-alias {
+  color: var(--text-tertiary);
+  min-width: 11em;
+}
+
+.help-desc {
+  color: var(--text-secondary);
+}
+
+.contact-list {
+  margin: 12px 0;
+}
+
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+  padding: 2px 0;
+}
+
+.contact-label {
+  color: var(--text-secondary);
+  min-width: 9em;
+}
+
+.status {
+  margin-top: 12px;
+}
+
+.status-open {
+  color: var(--accent-green);
+}
+
+.status-closed {
+  color: var(--accent-red);
+}

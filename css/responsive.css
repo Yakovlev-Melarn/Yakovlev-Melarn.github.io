@@ -1,0 +1,67 @@
+@media (max-width: 900px) {
+  :root {
+    --font-size: 14px;
+  }
+
+  .terminal {
+    max-width: 100%;
+    padding: 24px 24px var(--dock-reserve);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --font-size: 13px;
+    --dock-reserve: 72px;
+  }
+
+  .terminal {
+    padding: 16px 16px var(--dock-reserve);
+  }
+
+  .card {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .help-cmd,
+  .help-alias,
+  .contact-label {
+    min-width: 0;
+  }
+
+  .dock {
+    bottom: calc(8px + var(--keyboard-offset, 0px) + env(safe-area-inset-bottom, 0px));
+    padding: 6px;
+    gap: 2px;
+  }
+
+  .dock-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px;
+  }
+
+  .dock-btn .label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

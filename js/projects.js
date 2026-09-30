@@ -105,3 +105,5 @@ const projects = [
     },
   },
 ];
+
+export { projects };
