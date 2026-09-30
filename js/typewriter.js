@@ -2,10 +2,10 @@ import {Terminal} from "./terminal.js";
 
 const Typewriter = (() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const START_DELAY = 500;
-    const LINE_PAUSE = 140;
-    const MIN_SPEED = 30;
-    const MAX_SPEED = 50;
+    const START_DELAY = 250;
+    const LINE_PAUSE = 70;
+    const MIN_SPEED = 15;
+    const MAX_SPEED = 25;
 
     function wait(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
