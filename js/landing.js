@@ -18,14 +18,24 @@ function jobCard(job) {
     );
 }
 
+function projectLinksRow(project) {
+  const links = [];
+  if (project.links && project.links.github) links.push(anchor(project.links.github, "GitHub"));
+  if (project.links && project.links.live) links.push(anchor(project.links.live, "Демо"));
+  if (project.links && project.links.docs) links.push(anchor(project.links.docs, "Документация"));
+  if (links.length === 0) return null;
+  return h("div", { class: "land-card-links" }, links);
+}
+
 function landProjectCard(project) {
-    return h(
-        "article",
-        {class: "land-card"},
-        h("h3", null, project.title),
-        h("p", {class: "land-what"}, project.plain),
-        h("p", {class: "land-result"}, "Результат: " + project.result)
-    );
+  return h(
+    "article",
+    { class: "land-card" },
+    h("h3", null, project.title),
+    h("p", { class: "land-what" }, project.plain),
+    h("p", { class: "land-result" }, "Результат: " + project.result),
+    projectLinksRow(project)
+  );
 }
 
 function skillsGrid() {

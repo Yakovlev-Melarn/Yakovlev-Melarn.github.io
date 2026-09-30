@@ -438,6 +438,27 @@ html:has(#view-landing:not([hidden])) {
   color: var(--land-accent-deep);
 }
 
+.land-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 16px;
+}
+
+.land-card-links a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--land-accent-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.land-card-links a:hover {
+  color: var(--land-accent);
+  border-bottom-color: var(--land-accent);
+}
+
 .land-lead {
   font-size: 15.5px;
   color: var(--land-text-dim);
