@@ -72,12 +72,10 @@ npm run build
 
 ## Перед публикацией
 
-- Замените плейсхолдеры `[Имя Фамилия]` в `index.html` и `js/data.js`
-- Заполните контакты в `js/data.js` (`Profile.contacts`)
-- **Лендинг (HR-вид):** отредактируйте `Profile.tagline`, `Profile.about`, `Profile.softSkills`, `PlainSkills`, а также `summary`/`plainBullets` у каждой позиции в `Experience` и `plain`/`result` у проектов в `js/projects.js` — весь «человеческий» текст живёт в данных, а не в разметке
+- **Лендинг (HR-вид):** отредактируйте «человеческий» текст под себя: `Profile.about`, `Profile.softSkills`, `PlainSkills`, `summary`/`plainBullets` у каждой позиции в `Experience` и `plain`/`result` у проектов в `js/projects.js` — весь текст живёт в данных, а не в разметке
+- Замените 6 плейсхолдеров в `js/projects.js` на реальные проекты (включая ссылки в `links`)
 - Замените плейсхолдер-аватар `assets/avatar.svg` на реальное фото (SVG или PNG, ~240×240)
-- Замените 6 плейсхолдеров в `js/projects.js` на реальные проекты
-- Укажите свой домен в `CNAME` и имя в `assets/og-image.png`
+- При смене имени/стека пересоберите `assets/og-image.png`
 
 ## Деплой
 

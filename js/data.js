@@ -1,7 +1,7 @@
 const Profile = {
-  name: "[Имя Фамилия]",
+  name: "Алексей Яковлев",
   role: "Backend Developer",
-  tagline: "Строю «моторный отсек» веб-сервисов: быстро, надёжно и так, чтобы команде было легко работать",
+  tagline: "Строю «моторный отсек» веб-сервисов: быстро, надёжно и так, чтобы команде было легко работать. Fullstack — по вызову.",
   spec: "PHP / Laravel / API / PostgreSQL",
   location: "Россия, удалённо",
   years: "5+",
@@ -19,13 +19,16 @@ const Profile = {
     "Работа с требованиями и оценка задач",
   ],
   contacts: [
-    { label: "Email", display: "your@email.com", url: "mailto:your@email.com" },
-    { label: "GitHub", display: "github.com/username", url: "https://github.com/username" },
-    { label: "Telegram", display: "@username", url: "https://t.me/username" },
+    { label: "Email", display: "melarn4u@gmail.com", url: "mailto:melarn4u@gmail.com" },
     {
-      label: "LinkedIn",
-      display: "linkedin.com/in/username",
-      url: "https://linkedin.com/in/username",
+      label: "GitHub",
+      display: "github.com/Yakovlev-Melarn",
+      url: "https://github.com/Yakovlev-Melarn",
+    },
+    {
+      label: "MAX",
+      display: "написать",
+      url: "https://max.ru/u/f9LHodD0cOIf66THihNKfyjj5YcGpWTGEcb1CS52kbDkh5sfsXsoB-83Gl4",
     },
   ],
 };

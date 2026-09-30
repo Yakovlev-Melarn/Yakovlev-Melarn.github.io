@@ -1,4 +1,4 @@
-const projects = [
+﻿const projects = [
   {
     id: "project-1",
     title: "E-commerce REST API",
@@ -15,7 +15,7 @@ const projects = [
       "Docker, CI/CD через GitHub Actions",
     ],
     links: {
-      github: "https://github.com/username/project-1",
+      github: "https://github.com/Yakovlev-Melarn/project-1",
       live: "https://example.com",
       docs: "https://docs.example.com",
     },
@@ -36,7 +36,7 @@ const projects = [
       "Метрики Prometheus, трейсинг",
     ],
     links: {
-      github: "https://github.com/username/project-2",
+      github: "https://github.com/Yakovlev-Melarn/project-2",
       docs: "https://docs.example.com",
     },
   },
@@ -55,7 +55,7 @@ const projects = [
       "Работа с несколькими окружениями (dev/stage/prod)",
     ],
     links: {
-      github: "https://github.com/username/project-3",
+      github: "https://github.com/Yakovlev-Melarn/project-3",
     },
   },
   {
@@ -73,7 +73,7 @@ const projects = [
       "Горизонтальное масштабирование через Redis Pub/Sub",
     ],
     links: {
-      github: "https://github.com/username/project-4",
+      github: "https://github.com/Yakovlev-Melarn/project-4",
       live: "https://example.com",
     },
   },
@@ -93,7 +93,7 @@ const projects = [
       "Автотесты ключевых сценариев",
     ],
     links: {
-      github: "https://github.com/username/project-5",
+      github: "https://github.com/Yakovlev-Melarn/project-5",
       live: "https://example.com",
     },
   },
@@ -113,7 +113,7 @@ const projects = [
       "Web-интерфейс с фильтрами и экспортом",
     ],
     links: {
-      github: "https://github.com/username/project-6",
+      github: "https://github.com/Yakovlev-Melarn/project-6",
     },
   },
 ];
